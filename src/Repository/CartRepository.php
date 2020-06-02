@@ -25,7 +25,7 @@ class CartRepository extends ServiceEntityRepository
 
     public function savePolymorphCart(Cart $cart): void
     {
-        $cartSaver = new SaveCartToSession( new SaveCartToDB( new SaveCartEmpty() ) );
+        $cartSaver = new SaveCartToSession(new SaveCartToDB(new SaveCartEmpty()));
         $cartSaver->save($cart);
     }
 

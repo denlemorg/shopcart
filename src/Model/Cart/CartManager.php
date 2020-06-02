@@ -3,12 +3,10 @@
 
 namespace App\Model\Cart;
 
-
 use App\Entity\Cart;
 use App\Entity\Product;
 use App\Repository\CartRepository;
 use Doctrine\ORM\EntityManagerInterface;
-
 
 class CartManager
 {
@@ -38,5 +36,4 @@ class CartManager
         $this->cart->setProducts($cartProducts);
         return $this->cart;
     }
-
 }

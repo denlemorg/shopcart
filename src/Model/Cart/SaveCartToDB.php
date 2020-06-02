@@ -3,7 +3,6 @@
 
 namespace App\Model\Cart;
 
-
 use App\Entity\Cart;
 
 class SaveCartToDB implements SaveCartInterface

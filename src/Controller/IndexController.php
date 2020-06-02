@@ -32,6 +32,5 @@ class IndexController extends AbstractController
         $cartRepository->savePolymorphCart($cart);
 
         dd($cart);
-
     }
 }
