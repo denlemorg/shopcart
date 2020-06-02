@@ -3,10 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Cart;
-use App\Model\Cart\SaveCartEmpty;
-use App\Model\Cart\SaveCartInterface;
-use App\Model\Cart\SaveCartToDB;
-use App\Model\Cart\SaveCartToSession;
+use App\Model\Cart\ProductProviderEmpty;
+use App\Model\Cart\ProductProviderInterface;
+use App\Model\Cart\ProductProviderToDB;
+use App\Model\Cart\ProductProviderToSession;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -25,7 +25,7 @@ class CartRepository extends ServiceEntityRepository
 
     public function savePolymorphCart(Cart $cart): void
     {
-        $cartSaver = new SaveCartToSession(new SaveCartToDB(new SaveCartEmpty()));
+        $cartSaver = new ProductProviderToSession(new ProductProviderToDB(new ProductProviderEmpty()));
         $cartSaver->save($cart);
     }
 

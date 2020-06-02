@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use App\Entity\Cart;
-use App\Model\Cart\CartManager;
+use App\Model\Cart\Product;
 use App\Repository\CartRepository;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -17,12 +17,13 @@ class IndexController extends AbstractController
     /**
      * @Route("/index", name="index")
      *
-     * @param CartManager $cartManager
+     * @param Cart              $cartManager
      * @param ProductRepository $productRepository
-     * @param CartRepository $cartRepository
+     * @param CartRepository    $cartRepository
+     *
      * @return void
      */
-    public function index(CartManager $cartManager, ProductRepository $productRepository, CartRepository $cartRepository)
+    public function index(Cart $cartManager, ProductRepository $productRepository, CartRepository $cartRepository)
     {
 
         $products = $productRepository->findAll();
